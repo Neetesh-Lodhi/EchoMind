@@ -3,7 +3,7 @@ import fs from "fs"
 import dotenv from "dotenv"
 dotenv.config()
 
-const uploadOnCloudinary = async (filepath) => {
+export const uploadOnCloudinary = async (filepath) => {
           cloudinary.config({
             cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
             api_key: process.env.CLOUDINARY_API_KEY,
@@ -18,8 +18,8 @@ const uploadOnCloudinary = async (filepath) => {
                         
           }catch(error) {
                     fs.unlinkSync(filepath) 
-                return res.status(500).json({ message: "cloudinary error" });    
+               console.log(error,"cloudinary error")   
           }
 }
 
-export default uploadOnCloudinary
+// export default uploadOnCloudinary

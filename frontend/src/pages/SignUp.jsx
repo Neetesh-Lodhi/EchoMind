@@ -9,7 +9,7 @@ import axios from "axios";
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const { serverUrl } = useContext(userDataContext);
+  const { serverUrl, userData, setUserData } = useContext(userDataContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,10 +28,12 @@ function SignUp() {
         },
         { withCredentials: true }
       );
-      console.log(result.data);
+      setUserData(result.data);
       setLoading(false);
+      navigate("/customize");
     } catch (error) {
       console.log("Error:", error.response?.data || error.message);
+      setUserData(null);
       setLoading(false);
     }
   };

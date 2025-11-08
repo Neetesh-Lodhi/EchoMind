@@ -10,7 +10,7 @@ import axios from "axios";
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const {serverUrl} = useContext(userDataContext);
+  const { serverUrl, userData, setUserData } = useContext(userDataContext);
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,10 +28,12 @@ function SignIn() {
         },
         { withCredentials: true }
       );
-      console.log(result.data)
+     setUserData(result.data)
       setLoading(false)
+      navigate("/");
     } catch (error) {
       console.log("Error:", error.response?.data || error.message);
+      setUserData
       setLoading(false)
     }
   }
