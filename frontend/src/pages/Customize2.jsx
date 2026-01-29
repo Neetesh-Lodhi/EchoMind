@@ -56,7 +56,7 @@ function Customize2() {
       />
       {assistantName && (
         <button
-          className="min-w-[300px] h-[60px] mt-[30px] text-black font-semibold 
+          className="min-w-[299px] h-[60px] mt-[30px] text-black font-semibold 
           bg-white rounded-full text-[19px] cursor-pointer"
           onClick={handleUpdateAssistant}
         >
