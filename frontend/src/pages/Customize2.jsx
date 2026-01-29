@@ -34,7 +34,7 @@ function Customize2() {
 
       console.log("Response:", result.data);
       setUserData(result.data);
-      navigate("/dashboard"); // optional navigation after update
+      navigate("/dashboard"); // optional navigation after update and create assistent
     } catch (error) {
       console.log(error.response?.data || error.message);
     }
