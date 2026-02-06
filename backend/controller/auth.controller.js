@@ -71,14 +71,14 @@ export const SignIn = async (req, res) => {
   }
 };
 
-export const logOut = async (req, res) => {
-  try {
-    res.clearCookie("token");
-    return res
-      .status(200)
-      .json({ success: true, message: "Logout successful" });
-  } catch (error) {
-    console.error("Logout Error:", error.message);
-    return res.status(500).json({ message: "Logout error" });
-  }
-};
+// export const logOut = async (req, res) => {
+//   try {
+//     res.clearCookie("token");
+//     return res
+//       .status(200)
+//       .json({ success: true, message: "Logout successful" });
+//   } catch (error) {
+//     console.error("Logout Error:", error.message);
+//     return res.status(500).json({ message: "Logout error" });
+//   }
+// };
